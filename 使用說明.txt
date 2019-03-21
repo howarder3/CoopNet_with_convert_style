@@ -1,0 +1,19 @@
+D:
+
+cd D:\test\myCoopNets
+
+conda activate mlenv
+
+python main.py --category alp --data_dir ./data/scene --output_dir ./output --num_epochs 300 --batch_size 100 --d_lr 0.01 --g_lr 0.0001
+
+# training orange 1
+python main.py --category alp_test --data_dir ./data/scene --output_dir ./output --num_epochs 3000 --batch_size 100 --d_lr 0.01 --g_lr 0.0001
+
+# training monet 1
+python main.py --category monet --data_dir ./data/scene --output_dir ./output --num_epochs 3000 --batch_size 100 --d_lr 0.01 --g_lr 0.0001
+
+# CycleCoopNet orange_256
+python main.py --category orange_256 --category2 apple_256 --data_dir ./data/scene --output_dir ./output --num_epochs 3000 --batch_size 100 --d_lr 0.01 --g_lr 0.0001 --nTileRow=10 --nTileCol=10
+
+# CycleCoopNet orange_64 2000 epochs
+python main.py --category orange_64 --category2 apple_64 --data_dir ./data/scene --output_dir ./output --num_epochs 2000 --batch_size 100 --d_lr 0.01 --g_lr 0.0001 --nTileRow=10 --nTileCol=10
